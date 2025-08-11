@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blackjack</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #0b1320;
+      color: #e6edf3;
+      display: grid;
+      place-items: center;
+      min-height: 100dvh;
+    }
+
+    #game {
+      background: #111a2b;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+      width: min(680px, 92vw);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-weight: 700;
+    }
+
+    .row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .cards {
+      font-size: 22px;
+      letter-spacing: 2px;
+    }
+
+    .tot {
+      opacity: .8
+    }
+
+    .actions {
+      margin-top: 16px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      background: #2651ff;
+      color: white;
+      border: 0;
+      padding: 10px 16px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    button.secondary {
+      background: #2b3448;
+    }
+
+    button[disabled] {
+      opacity: .45;
+      cursor: not-allowed;
+    }
+
+    #message {
+      margin-top: 10px;
+      font-weight: 700;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="game">
+    <h1>Blackjack</h1>
+
+    <div class="row" id="playerRow">
+      <strong>Jugador:</strong>
+      <span id="playerCards" class="cards"></span>
+      <span id="playerTotal" class="tot"></span>
+    </div>
+
+    <div class="row" id="dealerRow">
+      <strong>Dealer:</strong>
+      <span id="dealerCards" class="cards"></span>
+      <span id="dealerTotal" class="tot"></span>
+    </div>
+
+    <div class="actions">
+      <button id="hitBtn">Hit</button>
+      <button id="standBtn">Stand</button>
+      <button id="newBtn" class="secondary">Nueva partida</button>
+    </div>
+
+    <p id="message"></p>
+  </div>
+
+  <script type="module" src="/src/blackjack-simple.ts"></script>
+</body>
+
+</html>
